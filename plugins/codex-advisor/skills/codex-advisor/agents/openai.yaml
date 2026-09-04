@@ -1,0 +1,6 @@
+interface:
+  display_name: "Codex Advisor"
+  short_description: "Codex advises while another agent implements"
+  default_prompt: "Use $codex-advisor to specify this task, delegate implementation, and verify the result."
+policy:
+  allow_implicit_invocation: false

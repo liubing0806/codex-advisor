@@ -1,0 +1,37 @@
+{
+  "name": "codex-advisor",
+  "version": "0.1.0",
+  "description": "Keep Codex in the advisor role while a selected agent performs implementation work.",
+  "author": {
+    "name": "liubing",
+    "url": "https://github.com/liubing0806"
+  },
+  "homepage": "https://github.com/liubing0806/codex-advisor",
+  "repository": "https://github.com/liubing0806/codex-advisor",
+  "license": "MIT",
+  "keywords": [
+    "advisor",
+    "agents",
+    "delegation",
+    "orchestration",
+    "codex",
+    "grok"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Codex Advisor",
+    "shortDescription": "Codex advises while another agent implements.",
+    "longDescription": "Codex inspects the repository, defines an implementation contract, delegates every file change to a selected executor, and independently reviews the resulting diff and verification evidence.",
+    "developerName": "liubing",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Delegation",
+      "Review",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/liubing0806/codex-advisor",
+    "defaultPrompt": [
+      "Use $codex-advisor to specify this task, delegate implementation, and verify the result."
+    ]
+  }
+}
