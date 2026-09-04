@@ -37,11 +37,11 @@ Before delegation:
 2. Record the repository root, branch, HEAD, `git status --short`, and the relevant baseline diff. Preserve existing user changes.
 3. Resolve discoverable facts yourself. Ask the user only when an unresolved choice changes correctness, scope, data, security, or the public interface.
 4. Define observable completion criteria and the command or checks that prove them.
-5. Write the complete `EXECUTOR REQUEST` described in the executor contract to a unique temporary file.
+5. Write the complete `EXECUTOR REQUEST` described in the executor contract to a unique temporary file. For Grok, append the executor-specific non-interactive constraint from the Grok reference.
 
 ## Delegate and verify
 
-For Grok, run the bundled adapter exactly as described in the Grok reference. For another executor, send the same request through its available delegation mechanism.
+For Grok, run the bundled adapter exactly as described in the Grok reference. Its shell tool is disabled; Grok reads and edits through dedicated tools, while you run every command-based verification. For another executor, send the same request through its available delegation mechanism.
 
 After the executor returns:
 

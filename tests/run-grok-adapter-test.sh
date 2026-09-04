@@ -52,6 +52,8 @@ rg -Fx -- 'acceptEdits' "$args_file" >/dev/null
 rg -Fx -- '--allow' "$args_file" >/dev/null
 rg -Fx -- "Edit($workspace/**)" "$args_file" >/dev/null
 rg -Fx -- "Write($workspace/**)" "$args_file" >/dev/null
+rg -Fx -- '--disallowed-tools' "$args_file" >/dev/null
+rg -Fx -- 'run_terminal_cmd' "$args_file" >/dev/null
 rg -Fx -- '--sandbox' "$args_file" >/dev/null
 rg -Fx -- 'workspace' "$args_file" >/dev/null
 rg -Fx -- '--output-format' "$args_file" >/dev/null

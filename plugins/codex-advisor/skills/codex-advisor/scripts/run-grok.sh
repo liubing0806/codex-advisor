@@ -105,6 +105,7 @@ grok_command=(
   --permission-mode acceptEdits
   --allow "Edit($workspace/**)"
   --allow "Write($workspace/**)"
+  --disallowed-tools run_terminal_cmd
   --sandbox workspace
   --output-format plain
   --cwd "$workspace"

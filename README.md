@@ -30,6 +30,8 @@ grok models
 
 Codex Advisor intentionally does not pin a Grok model. The adapter uses the default selected by the user's Grok CLI configuration.
 
+The bundled adapter disables Grok's shell tool so a headless permission prompt cannot terminate an edit. Grok uses dedicated read and edit tools; Codex runs the specified verification commands independently.
+
 ## Use
 
 Use the default Grok executor:
