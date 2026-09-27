@@ -85,3 +85,11 @@ The role-separated architect and implementer pattern was inspired by [fable-advi
 ## License
 
 MIT
+
+## Benchmark
+
+See [benchmark/README.md](benchmark/README.md) for isolated A/B runs, replay fixtures, scoring limits, and result schema. For a live run:
+
+```bash
+python3 benchmark/run.py --output /tmp/advisor-benchmark
+```

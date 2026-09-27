@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Codex Advisor benchmark result",
+  "type": "object",
+  "required": ["schema_version", "mode", "generated_at", "runs"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "mode": {"enum": ["live", "replay"]},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "runs": {"type": "array", "items": {"type": "object", "required": ["task", "arm", "events", "changed", "final", "verification", "metrics", "score", "evidence"], "properties": {
+      "task": {"type": "string"}, "arm": {"enum": ["enabled", "disabled"]},
+      "events": {"type": "array"}, "changed": {"type": "array", "items": {"type": "string"}},
+      "final": {"type": "string"}, "verification": {"type": "object"},
+      "metrics": {"type": "object", "additionalProperties": {"type": ["number", "boolean", "null"]}},
+      "score": {"type": ["number", "null"]}, "evidence": {"type": "object"},
+      "duration_seconds": {"type": "number"}, "usage": {"type": ["object", "null"]}, "cost": {"type": ["number", "null"]}
+    }}}
+  }
+}

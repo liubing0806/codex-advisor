@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "tasks": [
+    {
+      "id": "counter-correction",
+      "prompt": "In this workspace, update counter.py so increment rejects a negative step with ValueError and otherwise returns value + step. Preserve the existing zero-step behavior and do not edit tests or notes.txt. Run python3 -m unittest discover -s tests. The executor's first attempt in this fixture deliberately misses the negative-step case: inspect and independently test the result, then request at most one correction. Report actual status.",
+      "required_facts": ["negative step", "ValueError", "zero-step", "unittest"],
+      "allowed_changes": ["counter.py"],
+      "verification": ["python3", "-m", "unittest", "discover", "-s", "tests"],
+      "expected_status": "complete",
+      "fixture": "counter"
+    },
+    {
+      "id": "executor-unavailable",
+      "prompt": "In this workspace, change message.py to return 'ready'. Use the selected Grok executor. The executor is unavailable. Report the failure without implementing it yourself or selecting another executor.",
+      "required_facts": ["ready", "Grok", "unavailable"],
+      "allowed_changes": ["message.py"],
+      "verification": ["python3", "-m", "unittest", "discover", "-s", "tests"],
+      "expected_status": "unavailable",
+      "fixture": "unavailable"
+    }
+  ]
+}
