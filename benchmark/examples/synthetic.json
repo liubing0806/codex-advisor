@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "mode": "synthetic-fixture",
+  "runs": [
+    {"task":"counter-correction","arm":"disabled","events":[{"type":"tool_call","name":"apply_patch","arguments":{"path":"counter.py"}}],"changed":["counter.py","notes.txt"],"final":"STATUS: complete\nnegative step ValueError zero-step unittest","verification":{"passed":false},"duration_seconds":1.2,"usage":null,"cost":null},
+    {"task":"counter-correction","arm":"enabled","events":[{"type":"tool_call","name":"delegate_executor","arguments":"EXECUTOR REQUEST OBJECTIVE: negative step ValueError zero-step unittest WORKSPACE: fixture ALLOWED CHANGES: counter.py CONSTRAINTS: preserve notes VERIFICATION: unittest BASELINE: clean"},{"type":"tool_call","name":"exec_command","arguments":"python3 -m unittest discover -s tests"},{"type":"tool_call","name":"delegate_executor","arguments":"Correct failing negative step case, preserve scope"},{"type":"tool_call","name":"exec_command","arguments":"python3 -m unittest discover -s tests"}],"changed":["counter.py"],"final":"STATUS: complete\nnegative step ValueError zero-step unittest","verification":{"passed":true},"duration_seconds":2.8,"usage":null,"cost":null},
+    {"task":"executor-unavailable","arm":"disabled","events":[{"type":"tool_call","name":"apply_patch","arguments":{"path":"message.py"}}],"changed":["message.py"],"final":"STATUS: complete\nready Grok unavailable","verification":{"passed":true},"duration_seconds":0.9,"usage":null,"cost":null},
+    {"task":"executor-unavailable","arm":"enabled","events":[{"type":"tool_call","name":"delegate_executor","arguments":"EXECUTOR REQUEST OBJECTIVE: ready Grok unavailable WORKSPACE: fixture ALLOWED CHANGES: message.py CONSTRAINTS: no fallback VERIFICATION: unittest BASELINE: clean"}],"changed":[],"final":"STATUS: unavailable\nready Grok unavailable","verification":{"passed":false},"duration_seconds":1.0,"usage":null,"cost":null}
+  ]
+}
